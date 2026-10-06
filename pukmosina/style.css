@@ -1,0 +1,273 @@
+/*
+Theme Name: Pukmosina
+Theme URI: https://github.com/dariuszmadej73-wq/pukmosina-wordpress-theme
+Author: Copilot
+Description: Minimalistyczny motyw WordPress z komunikatami i statycznymi stronami, zoptymalizowany do wysokiej czytelności i dostępności.
+Version: 1.0.0
+Text Domain: pukmosina
+*/
+
+:root {
+    --bg: #ffffff;
+    --panel: #f6f6f6;
+    --panel-strong: #efefef;
+    --text: #111111;
+    --muted: #2c2c2c;
+    --line: #1a1a1a;
+    --accent: #0b4f8a;
+    --accent-strong: #083d69;
+    --focus: #ffbf47;
+    --success-bg: #edf7ee;
+    --success-text: #0d3d1d;
+    --shadow: rgba(0, 0, 0, 0.08);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--text);
+    background: var(--bg);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 0.18em;
+}
+
+a:hover,
+a:focus {
+    color: var(--accent-strong);
+}
+
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 3px solid var(--focus);
+    outline-offset: 3px;
+}
+
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    z-index: 999;
+    background: #000;
+    color: #fff;
+    padding: 0.75rem 1rem;
+}
+
+.skip-link:focus {
+    left: 1rem;
+    top: 1rem;
+}
+
+.site-header {
+    background: var(--panel);
+    border-bottom: 3px solid var(--line);
+}
+
+.site-inner,
+.content-wrap {
+    width: min(1100px, calc(100% - 2rem));
+    margin: 0 auto;
+}
+
+.header-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    min-height: 78px;
+}
+
+.site-title {
+    margin: 0;
+    font-size: clamp(1.5rem, 2vw, 2.2rem);
+    line-height: 1.2;
+}
+
+.site-title a {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.main-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav a {
+    display: inline-block;
+    padding: 0.45rem 0.75rem;
+    text-decoration: none;
+    border-radius: 0.25rem;
+    font-weight: 700;
+}
+
+.main-nav a:hover,
+.main-nav a:focus {
+    background: var(--panel-strong);
+    text-decoration: underline;
+}
+
+.site-main {
+    padding: 2rem 0 4rem;
+}
+
+h1, h2, h3, h4 {
+    line-height: 1.25;
+    margin-top: 0;
+    color: var(--text);
+}
+
+h1 {
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: clamp(1.5rem, 2vw, 2.2rem);
+    margin-bottom: 0.8rem;
+}
+
+h3 {
+    font-size: clamp(1.2rem, 1.7vw, 1.7rem);
+}
+
+p,
+li {
+    max-width: 70ch;
+}
+
+.page-card,
+.notice-card,
+.post-list li,
+.info-card {
+    background: var(--panel);
+    border: 2px solid var(--line);
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px var(--shadow);
+}
+
+.notice-card {
+    background: var(--success-bg);
+    color: var(--success-text);
+}
+
+.notice-card h2,
+.notice-card p {
+    color: var(--success-text);
+}
+
+.hero {
+    margin-bottom: 2.5rem;
+}
+
+.hero p {
+    font-size: 1.1rem;
+}
+
+.post-list {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0 0;
+    display: grid;
+    gap: 1.25rem;
+}
+
+.post-list li {
+    background: var(--panel);
+}
+
+.meta {
+    display: block;
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin-bottom: 0.5rem;
+}
+
+.entry-content p,
+.entry-content ul,
+.entry-content ol {
+    max-width: 70ch;
+}
+
+.entry-content img {
+    border: 2px solid var(--line);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.info-card {
+    background: var(--panel);
+}
+
+.button-link {
+    display: inline-block;
+    padding: 0.85rem 1.2rem;
+    background: var(--accent);
+    color: #fff;
+    border: 2px solid var(--accent);
+    text-decoration: none;
+    font-weight: 700;
+    margin-top: 1rem;
+}
+
+.button-link:hover,
+.button-link:focus {
+    background: var(--accent-strong);
+    color: #fff;
+}
+
+.site-footer {
+    background: #111111;
+    color: #ffffff;
+    padding: 1.5rem 0;
+}
+
+.site-footer a {
+    color: #ffffff;
+}
+
+@media (max-width: 640px) {
+    .header-wrap {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem 0;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
